@@ -1,6 +1,6 @@
 # go-protobuf-plugin-versioning-example
 An example of easy consistent versioning of Go based Protobuf plugins. See
-https://jbrandorst.com/post/plugin-versioning for the accompanying blog post.
+https://jbrandhorst.com/post/plugin-versioning for the accompanying blog post.
 
 ## Usage
 
