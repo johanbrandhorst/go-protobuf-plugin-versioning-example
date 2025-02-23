@@ -1,23 +1,21 @@
-version: v1
+version: v2
 managed:
   enabled: true
-  go_package_prefix:
-    default: github.com/johanbrandhorst/go-protobuf-plugin-versioning-example
-    except:
-      - buf.build/googleapis/googleapis
+  disable:
+    - module: buf.build/googleapis/googleapis
+  override:
+    - file_option: go_package_prefix
+      value: github.com/johanbrandhorst/go-protobuf-plugin-versioning-example
 plugins:
-  - name: go
+  - local: ["go", "tool", "protoc-gen-go"]
     out: gen/go
-    path: bin/protoc-gen-go
     opt:
       - paths=source_relative
-  - name: go-grpc
+  - local: ["go", "tool", "protoc-gen-go-grpc"]
     out: gen/go
-    path: bin/protoc-gen-go-grpc
     opt:
       - paths=source_relative
-  - name: grpc-gateway
+  - local: ["go", "tool", "protoc-gen-grpc-gateway"]
     out: gen/go
-    path: bin/protoc-gen-grpc-gateway
     opt:
       - paths=source_relative
